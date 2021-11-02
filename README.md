@@ -7,7 +7,7 @@ Este repositório armazena os códigos e scripts fornecidos durante as aulas ao 
 Basta clonar o repositório
 
 ```sh
-git clone git@github.com:tryber/sd-xp-a-live-lecture.git
+git clone git@github.com:tryber/sd-xp-b-live-lecture.git
 ```
 
 Em seguida, acessar o branch do Pull Request da aula seguindo o padrão de nomenclatura dos branches (lecture/block.day).
