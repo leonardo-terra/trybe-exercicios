@@ -32,7 +32,7 @@ body{
 .section-text{
 
     line-height: 20px;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
     margin-top: 5%;
     margin-left: 25%;
@@ -56,5 +56,21 @@ body{
 
 .call-to-action{
     
-    
+    width: 300px;
+    background-color: #11a36a;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 4px;
+    display: block;
+    text-align: center;
+    margin:30px auto;
+
+}
+.call-to-action:hover{
+
+    background-color: #0a7e51;
+
 }
