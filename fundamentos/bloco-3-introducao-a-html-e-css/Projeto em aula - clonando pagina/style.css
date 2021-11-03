@@ -15,14 +15,12 @@ body{
     color: blue;
     font-weight: 600;
     line-height: 50px;
-    
-    
-    
 }
 
 .trybe-green{
     color: #11a36a;
-    }
+
+}
 
 .section-tittle{
     line-height: 30px;
@@ -31,3 +29,32 @@ body{
     text-align: center;
 }
 
+.section-text{
+
+    line-height: 20px;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 5%;
+    
+}
+
+.testimonials{
+    line-height: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    
+}
+
+.picture{
+    border-radius: 100%;
+    max-width: 120px;
+
+}
+
+.call-to-action{
+    
+    
+}
