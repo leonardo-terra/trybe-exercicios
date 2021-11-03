@@ -1,3 +1,33 @@
-.imagemDeFundo{
-    width: 10px;
+
+body{
+    font-family: 'Montserrat', sans-serif;    
+    font-size: 15px;
+    color: #475550
 }
+
+#imagemDeFundo{
+    width: 400px
+    
+    
+}
+
+.top{
+    color: blue;
+    font-weight: 600;
+    line-height: 50px;
+    
+    
+    
+}
+
+.trybe-green{
+    color: #11a36a;
+    }
+
+.section-tittle{
+    line-height: 30px;
+    font-weight: 600;
+    font-size: 28px;
+    text-align: center;
+}
+
