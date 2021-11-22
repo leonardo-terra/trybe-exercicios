@@ -57,69 +57,105 @@
   </head>
   <body>
     <script>
-       //--Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body ;
-       const tagBody= document.body;
-       const tagH1 = document.createElement('h1');
-       tagH1.innerText = 'Exercício 5.2 - JavaScript DOM';
-       tagBody.appendChild(tagH1);
+      //--Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body ;
+      const tagBody = document.body;
+      const tagH1 = document.createElement("h1");
+      tagH1.innerText = "Exercício 5.2 - JavaScript DOM";
+      tagBody.appendChild(tagH1);
 
-       //--Adicione a tag main com a classe main-content como filho da tag body ;
-       const tagMain = document.createElement('main');
-       tagMain.className = 'main-content';
-       tagBody.appendChild(tagMain);
+      //--Adicione a tag main com a classe main-content como filho da tag body ;
+      const tagMain = document.createElement("main");
+      tagMain.className = "main-content";
+      tagBody.appendChild(tagMain);
 
       //--Adicione a tag section com a classe center-content como filho da tag main criada no passo 2;
-       const tagSection = document.createElement('section');
-       tagSection.className = 'center-content';
-       tagMain.appendChild(tagSection);
+      const tagSection = document.createElement("section");
+      tagSection.className = "center-content";
+      tagMain.appendChild(tagSection);
 
-       //Adicione a tag p como filho do section criado no passo 3 e coloque algum texto;
-       const paragraphP1 = document.createElement("p");
-       paragraphP1.innerText =
-         "Oi, eu sou a inserção de um parágrafo via <strong>JS</strong>";
-       tagSection.appendChild(paragraphP1);
+      //Adicione a tag p como filho do section criado no passo 3 e coloque algum texto;
+      const paragraphP1 = document.createElement("p");
+      paragraphP1.innerHTML =
+        "Oi, eu sou a inserção de um parágrafo via <strong>JS</strong>";
+      tagSection.appendChild(paragraphP1);
 
-       //Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;
-       const section2 = document.createElement("section");
-       section2.className = "left-content";
-       tagMain.appendChild(section2);
+      //Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;
+      const section2 = document.createElement("section");
+      section2.className = "left-content";
+      tagMain.appendChild(section2);
 
-       //Adicione a tag section com a classe right-content como filho da tag main criada no passo 2;
-       const section3 = document.createElement("section");
-       section2.className = "right-content";
-       tagMain.appendChild(section3);
+      //Adicione a tag section com a classe right-content como filho da tag main criada no passo 2;
+      const section3 = document.createElement("section");
+      section2.className = "right-content";
+      tagMain.appendChild(section3);
 
-       //Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do section criado no passo 5;
-       const imageTag = document.createElement('img');
-       imageTag.src = 'https://picsum.photos/200';
-       imageTag.className = 'small-image';
-       section2.appendChild(imageTag);
+      //Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do section criado no passo 5;
+      const imageTag = document.createElement("img");
+      imageTag.src = "https://picsum.photos/200";
+      imageTag.className = "small-image";
+      section2.appendChild(imageTag);
 
-       //Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
-        const tableTag = document.createElement('ul');
-        section3.appendChild(tableTag);
-        
-        var listElements = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez']; 
-       
-        for (let i=0; i<listElements.length; i++){
-            let elements = listElements[i];
-            let listItems = document.createElement('li');
+      //Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
+      const tableTag = document.createElement("ul");
+      section3.appendChild(tableTag);
 
-            listItems.innerText = elements;
-            tableTag.appendChild(listItems);
-        }
+      var listElements = [
+        "um",
+        "dois",
+        "três",
+        "quatro",
+        "cinco",
+        "seis",
+        "sete",
+        "oito",
+        "nove",
+        "dez",
+      ];
 
+      for (let i = 0; i < listElements.length; i++) {
+        let elements = listElements[i];
+        let listItems = document.createElement("li");
+
+        listItems.innerText = elements;
+        tableTag.appendChild(listItems);
+      }
+      //Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
+
+      const tag1H3 = document.createElement("h3");
+      const tag2H3 = document.createElement("h3");
+      const tag3H3 = document.createElement("h3");
+
+      tag1H3.innerText = "Essa é a primeira tag h3.";
+      tag2H3.innerText = "Essa é a segunda tag h3.";
+      tag3H3.innerText = "Essa é a terceira tag h3.";
+
+      tagMain.appendChild(tag1H3);
+      tagMain.appendChild(tag2H3);
+      tagMain.appendChild(tag3H3);
+
+      //Adicione a classe title na tag h1 criada;
+      tagBody.className = "title";
+
+      //Adicione a classe description nas 3 tags h3 criadas;
+      tag1H3.className = "description";
+      tag2H3.className = "description";
+      tag3H3.className = "description";
+
+      //Remova a section criado no passo 5 (aquele que possui a classe left-content ). Utilize a função .removeChild() ;
+      tagMain.removeChild(section2);
+
+      //Centralize a section criado no passo 6 (aquele que possui a classe right-content ). Dica: para centralizar, basta configurar o margin-right: auto da section ;
+      section3.style.marginRight = "auto";
+
+      //Troque a cor de fundo do elemento pai da section criada no passo 3 (aquela que possui a classe center-content ) para a cor verde;
+      tagSection.parentNode.style.backgroundColor = "lightgreen";
+
+      //Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8.
+      for ( let i =0; i<2; i++){
+        const removeList = document.getElementsByTagName('ul')[0].lastElementChild;
+        tableTag.removeChild(removeList);
+      }
+      
     </script>
   </body>
 </html>
-
-<!-- 
-
-
-
-
-
-
-
-
-Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2. -->
