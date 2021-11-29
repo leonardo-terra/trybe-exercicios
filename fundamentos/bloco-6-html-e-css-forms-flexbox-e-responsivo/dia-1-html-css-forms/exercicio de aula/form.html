@@ -11,7 +11,7 @@
 <body>
     <form action="" method="GET">
         <label for"email">e-mail:
-            <input type='text'id='email' placeholder="digite seu email!" required autocomplete="off" autofocus>
+            <input type='email'id='email' placeholder="digite seu email!" required autocomplete="off" autofocus>
         </label>
         <br><br>
         <label for="senha">senha:
@@ -21,6 +21,30 @@
         <label for="lembra">lembrar-me
             <input type="checkbox" name="" id="lembra">
         </label>
+        <br><br>
+        <label for="select">Selecione seu estado:
+            <select name="" id="select">
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="SP">São Paulo</option>
+                <option value="MG">Minas Gerais</option>
+            </select>
+        </label>
+        <br><br>
+        <label for="imagem">Foto de Perfil:
+            <input type="file" name="" id="imagem">
+        </label>
+        <br><br>
+        <label for="">Sexo:</label>
+        <br><br>
+        <label for="sexoM">Masculino
+            <input type="radio" name="sexo" id="sexoM">
+        </label>
+        <label for="sexoF">  Feminino
+            <input type="radio" name="sexo" id="sexoF">
+        </label>
+        <br><br>
+        <p>Fale mais sobre você:</p>
+        <textarea name="" id="" cols="40" rows="5" placeholder="mais sobre você"></textarea>
         <br><br>
         <button type="submit">Entrar</button>
     </form>
