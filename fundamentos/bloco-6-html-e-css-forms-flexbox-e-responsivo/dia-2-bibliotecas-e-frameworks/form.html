@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <fieldset>
+        <legend>Dados Pessoais</legend>
+        <label for="name">Nome: <input type="text" id='name' required maxlength="40"></label>
+        <label for="email">e-mail: <input type="email" name="" id="email" maxlength="50" required></label>
+        <label for="CPF">CPF: <input type="text" name="" id="CPF" maxlength="11" required></label>
+        <label for="end">Endereço: <input type="text" name="" id="end" maxlength="200" required></label>
+        <label for="cidade">Cidade: <input type="text" name="" id="cidade" maxlength="28" required></label>
+        <label for="lista-de-estados">Estado:
+            <select id='lista-de-estados'></select>
+        </label>
+        <p>Tipo de moradia:</p>
+        <label for="casa">Casa: <input type="radio" name="moradia-tipo" id="casa"></label>
+        <label for="apto">Apartamento: <input type="radio" name="moradia-tipo" id="apto"></label>
+    </fieldset>
+
+
+    <script src="script.js"></script>
+    <fieldset>
+        <legend>Dados do último emprego</legend>
+        <label for="resume">
+            <p>Resumo do Currículo</p>
+        </label><textarea name="" id="" cols="150" rows="10" required maxlength="1000"></textarea>
+        <label for="cargo">Cargo: <input type="text" id="cargo" required maxlength="40"></label>
+        <label for="inicio">Data de Início: <input type="date" name="" id="inicio"></label>
+    </fieldset>
+</body>
+
+</html>
