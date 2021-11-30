@@ -1,6 +1,6 @@
 # Trybe - Conteúdo
 
-Neste repositório constam todas as atividades de aprendizagem desenvolvidas por _[Wellington Rodrigues](https://www.linkedin.com/in/wellingtonrodrigues/)_ enquanto estudava na [Trybe](https://www.betrybe.com/) :rocket:
+Neste repositório constam todas as atividades de aprendizagem desenvolvidas por _[Leonardo Terra]_ enquanto estudava na [Trybe](https://www.betrybe.com/) :rocket:
 
 _"A Trybe é uma escola do futuro para qualquer pessoa que queira melhorar de vida e construir uma carreira de sucesso em tecnologia, onde uma das possibilidades de pagamento é quando a pessoa conseguir um emprego na área de tecnologia."_
 
