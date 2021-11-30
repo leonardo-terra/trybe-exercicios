@@ -36,4 +36,3 @@ for (let i = 0; i < stateOptions.length; i++) {
 	newElement.value = stateOptions[i];
 	optionList.appendChild(newElement);
 }
-console.log(optionList);

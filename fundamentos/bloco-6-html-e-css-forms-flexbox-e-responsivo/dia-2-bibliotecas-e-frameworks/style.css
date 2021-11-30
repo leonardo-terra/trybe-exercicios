@@ -1,4 +1,10 @@
-fieldset{
-    padding:15px;
-    margin:20px;
+*{
+    padding: 8px;
+    margin: auto;
+    background-color:beige;
+}
+legend{
+    color: Black;
+    font-weight: 900px;
+    
 }
