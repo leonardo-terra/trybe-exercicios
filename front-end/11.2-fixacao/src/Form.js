@@ -12,18 +12,17 @@ class Form extends Component {
 		};
 	}
 
-	handleChange(event) {
+	handleChange({ target }) {
+		const { name, value } = target;
 		this.setState({
-			estadoFavorito: event.target.value,
+			[name]: value,
 		});
 	}
 
 	render() {
 		return (
 			<div>
-				<h1>
-				Estados e Componentes controlados
-				</h1>
+				<h1>Estados e Componentes controlados</h1>
 				<form className='form'>
 					<label>
 						Diga qual o seu Estado favorito:
@@ -33,9 +32,13 @@ class Form extends Component {
 							onChange={this.handleChange}
 						/>
 					</label>
-					<input type='number' name='idade' />
-					<input type='checkbox' name='vaiComparecer' />
-				</form>
+					Qual a sua idade
+					<input type='number' 
+                        name='idade' 
+                        value={this.state.idade}
+                        onChange={this.handleChange} 
+                    />
+                </form>
 			</div>
 		);
 	}
