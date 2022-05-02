@@ -1,0 +1,15 @@
+SELECT 'This is SQL Exercise, Practice and Solution';
+SELECT 1 as one, 2 as two, 3 as three;
+SELECT 10 + 15;
+SELECT 20*2;
+SELECT * FROM Scientists.Scientists;
+SELECT * FROM Scientists.Projects;
+SELECT Name as 'Nome do Projeto', Hours as 'Tempo de trabalho' FROM Scientists.Projects;
+SELECT Name FROM Scientists.Scientists order by Name;
+SELECT Name FROM Scientists.Projects ORDER BY Name;
+SELECT "O projeto ", Name, "precisou de ", Hours, " horas para ser concluído." from Scientists.Projects; 
+SELECT Name, Hours FROM Scientists.Projects  order by Hours desc limit 3;
+SELECT DISTINCT Project FROM Scientists.AssignedTo;
+SELECT * FROM Scientists.Projects order by Hours DESC limit 1 offset 1;
+SELECT * FROM Scientists.Projects order by Hours limit 5;
+SELECT "Existem ", COUNT(Name), "cientistas na tabela Scientists" FROM Scientists.Scientists;
