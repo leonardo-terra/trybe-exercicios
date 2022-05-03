@@ -38,3 +38,6 @@ SELECT * FROM sakila.address
 WHERE address2 IS NOT NULL
 ;
 
+SELECT * FROM sakila.film
+WHERE title NOT LIKE 'academy%'
+;
