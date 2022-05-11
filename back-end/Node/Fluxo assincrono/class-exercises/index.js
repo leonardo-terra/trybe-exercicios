@@ -1,8 +1,7 @@
 const axios = require("axios");
 
-const getPokemonById = async (id) => {
-  const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
-  return response.data;
+const getPokemonById = (id) => {
+  return axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
 };
 
 async function main() {
@@ -16,7 +15,7 @@ async function main() {
 
   const pokemons = await Promise.all(promises);
   pokemons.forEach((pokemon) => {
-    console.log(`pokenome: ${pokemon.name}`);
+    console.log(`pokenome: ${pokemon.data.name}`);
   });
 }
 
