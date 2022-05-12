@@ -1,0 +1,29 @@
+{
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "sinon": "^14.0.0"
+  },
+  "name": "calcula-area",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "diff": "^5.0.0",
+    "has-flag": "^4.0.0",
+    "isarray": "^0.0.1",
+    "just-extend": "^4.2.1",
+    "lodash.get": "^4.4.2",
+    "nise": "^5.1.1",
+    "path-to-regexp": "^1.8.0",
+    "readline-sync": "^1.4.10",
+    "supports-color": "^7.2.0",
+    "type-detect": "^4.0.8"
+  },
+  "scripts": {
+    "test": "mocha tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
