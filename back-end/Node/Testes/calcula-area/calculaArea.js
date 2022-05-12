@@ -7,6 +7,4 @@ const calculaArea = () => {
   return area;
 };
 
-console.log(calculaArea());
-
 module.exports = calculaArea;
