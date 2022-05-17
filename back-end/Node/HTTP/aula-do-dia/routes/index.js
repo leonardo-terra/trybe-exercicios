@@ -15,4 +15,13 @@ routes.get("/users", (req, res) => {
   res.status(200).json(userData);
 });
 
+routes.get("/users/:id", (req, res) => {
+  const { id } = req.params;
+  const user = userData.filter((u) => u.id === parseInt(id));
+  if (!user.length) {
+    return res.status(404).json({ message: "pessoa usuaria não encontrada" });
+  }
+  res.status(200).json(user);
+});
+
 module.exports = routes;
