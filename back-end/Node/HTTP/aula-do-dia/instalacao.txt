@@ -1,4 +1,8 @@
 npm init -y
 npm i express 
- "scripts": {
-    "start": "node index.js"
+package.json:   
+
+   "scripts": {
+      "start": "node index.js"
+
+npm i -D nodemon
