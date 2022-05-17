@@ -1,0 +1,4 @@
+npm init -y
+npm i express 
+ "scripts": {
+    "start": "node index.js"
