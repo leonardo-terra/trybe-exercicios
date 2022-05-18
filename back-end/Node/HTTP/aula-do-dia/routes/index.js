@@ -24,4 +24,25 @@ routes.get("/users/:id", (req, res) => {
   res.status(200).json(user);
 });
 
+routes.post("/users", (req, res) => {
+  const { id, name, email, phone, age, username } = req.body;
+  userData.push({ id, name, email, phone, age, username });
+  if (!id || !name || !phone || !age || !username) {
+    return res.status(400).json({ message: "Bad Request!" });
+  }
+  res.status(201).end();
+});
+
+routes.delete("/users/:id", (req, res) => {
+  const { id } = req.params;
+  const userIndex = userData.findIndex((u) => u.id === parseInt(id));
+
+  if (userIndex === -1) {
+    return res.status(404).json("Usuário nao encontrado");
+  }
+  userData.splice(userIndex, 1);
+
+  res.status(204).end();
+});
+
 module.exports = routes;
