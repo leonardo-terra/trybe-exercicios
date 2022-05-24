@@ -1,7 +1,14 @@
+const express = require("express");
 
-const express = require('express');
+const Author = require("./Models/author");
 
 const app = express();
+
+app.get("/authors", async (_req, res) => {
+  const authors = await Author.getAll();
+
+  res.status(200).json(authors);
+});
 
 const PORT = process.env.PORT || 3000;
 
