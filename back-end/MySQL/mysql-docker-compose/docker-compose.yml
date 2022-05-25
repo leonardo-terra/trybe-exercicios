@@ -1,0 +1,11 @@
+services:
+  mysql:
+    # plataform: linux/x86_64 PARA QUEM ESTÁ NO MACOS
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 'SuaSenha'
+    ports: 
+      - "3306:3306"
+    volumes: 
+      - .data/mysql:/var/lib/mysql
