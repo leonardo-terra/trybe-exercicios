@@ -12,12 +12,21 @@ const getAll = async (_req, res) => {
 const getById = async (req, res) => {
   try {
     const { id } = req.params;
-    const book = await book.bookServices.getById(id);
+    const book = await bookServices.getById(id);
     return res.status(200).send(book);
   } catch (error) {
     console.log(error);
+    return res.status(500).send({ message: "Livro não encontrado!" });
+  }
+}
+
+const create = async (req, res) => {
+  try {
+    const newBook = await bookServices.create(req.body);
+    return res.status(201).send({ message: "Livro criado com sucesso!" });
+  } catch (error) {
     return res.status(500).send({ message: error.message });
   }
 }
 
-module.exports = { getAll, getById };
+module.exports = { getAll, getById, create };
