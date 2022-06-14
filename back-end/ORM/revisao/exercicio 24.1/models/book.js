@@ -1,5 +1,3 @@
-
-//models/user.js
 const Book = (sequelize, DataTypes) => {
   const Book = sequelize.define("Book", {
     title: DataTypes.STRING,
