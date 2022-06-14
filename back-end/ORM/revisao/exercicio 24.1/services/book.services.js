@@ -1,8 +1,13 @@
 const { Book } = require('../models');
 
 const getAll = async () => {
-  const data = await Book.findAll();
-  return data;
+  const books = await Book.findAll();
+  return books;
 }
 
-module.exports = { getAll };
+const getById = async (id) => {
+  const book = await Book.findOne({ where: { id } });
+  return book;
+}
+
+module.exports = { getAll, getById };
