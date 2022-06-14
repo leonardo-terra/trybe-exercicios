@@ -13,6 +13,8 @@ module.exports = (sequelize, DataTypes) => {
     });
 
   Employee.associate = (models) => {
+    /*   Employee.hasMany(models.Address,
+        { foreignKey: 'employee_id', as: 'addresses' }); */
     Employee.hasOne(models.Address,
       { foreignKey: 'employeeId', as: 'addresses' });
   };
