@@ -13,9 +13,9 @@ const getById = async (req, res) => {
   try {
     const { id } = req.params;
     const book = await bookServices.getById(id);
+    if (!book) throw new Error;
     return res.status(200).send(book);
   } catch (error) {
-    console.log(error);
     return res.status(500).send({ message: "Livro não encontrado!" });
   }
 }
@@ -38,4 +38,14 @@ const update = async (req, res) => {
     return res.status(404).send({ message: error.message });
   }
 }
-module.exports = { getAll, getById, create, update };
+
+const destroy = async (req, res) => {
+  try {
+    const { id } = req.params;
+    bookServices.destroy(id);
+    return res.status(200).send({ message: `O livro de id ${id} foi deletado com sucesso!` })
+  } catch (error) {
+    return res.status(500).send({ message: error.message })
+  }
+}
+module.exports = { getAll, getById, create, update, destroy };

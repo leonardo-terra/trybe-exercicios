@@ -22,4 +22,10 @@ const update = async (id, { title, author, pageQuantity }) => {
   )
 }
 
-module.exports = { getAll, getById, create, update };
+const destroy = async (id) => {
+  const deleteUser = await Book.destroy(
+    { where: { id } },
+  )
+}
+
+module.exports = { getAll, getById, create, update, destroy };
