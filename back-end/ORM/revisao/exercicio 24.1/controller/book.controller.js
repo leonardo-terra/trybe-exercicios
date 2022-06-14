@@ -29,4 +29,13 @@ const create = async (req, res) => {
   }
 }
 
-module.exports = { getAll, getById, create };
+const update = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updateBook = await bookServices.update(id, req.body);
+    return res.status(200).send({ message: "Livro atualizado com sucesso" });
+  } catch (error) {
+    return res.status(404).send({ message: error.message });
+  }
+}
+module.exports = { getAll, getById, create, update };
