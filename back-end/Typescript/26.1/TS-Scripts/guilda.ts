@@ -41,5 +41,5 @@ function printMembers(character: any, index: number) {
 class: ${cls}
 createdAt: ${createdAt}`);
 }
-
+ 
 guildMember.forEach(printMembers);
