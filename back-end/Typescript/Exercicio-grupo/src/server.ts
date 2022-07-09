@@ -13,3 +13,6 @@ app.get('/users', userController.getUsers)
 app.listen(PORT, () =>{
 console.log('Ouvindo na porta', PORT);
 });
+
+//express server on port 3000 
+
