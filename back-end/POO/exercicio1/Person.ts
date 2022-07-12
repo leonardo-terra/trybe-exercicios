@@ -1,11 +1,10 @@
-import * as moment from 'moment';
-
 class Person {
   protected name: string;
   protected birthDate: Date;
 
   constructor(name: string, birthDate: Date) {
     this.isNameValid(name);
+    this.isBirthDateValid(birthDate);
     this.name = name;
     this.birthDate = birthDate;
   }
@@ -24,14 +23,22 @@ class Person {
     return this.birthDate;
   }
 
-  private isNameValid(name: string): void {
-    if (name.length <= 3)
-      throw new Error('O nome deve possuir mais do que 3 caracteres');
+  static getAge(value: Date): number {
+    const diff = Math.abs(new Date().getTime() - value.getTime()); // diferença em milissegundos entre a data atual e a data passada por parâmetro
+    const yearMs = 31_536_000_000; // 1 ano = 31536000000 milissegundos
+    return Math.floor(diff / yearMs);
   }
 
-  private isBirthDateValid(birthDate: Date): void {
-    if (moment(birthDate).isBefore('1900/01/01'))
-      throw new Error('Você possui mais de 120 anos?:0');
+  private isNameValid(value: string): void {
+    if (value.length < 3)
+      throw new Error('O nome deve conter no mínimo 3 caracteres.');
+  }
+
+  private isBirthDateValid(value: Date): void {
+    if (value.getTime() > new Date().getTime())
+      throw new Error('A data de nascimento não pode ser uma data no futuro.');
+    if (Person.getAge(value) > 120)
+      throw new Error('A pessoa deve ter no máximo 120 anos.');
   }
 }
 

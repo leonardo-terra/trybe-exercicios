@@ -1,9 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var moment = require("moment");
 var Person = /** @class */ (function () {
     function Person(name, birthDate) {
         this.isNameValid(name);
+        this.isBirthDateValid(birthDate);
         this.name = name;
         this.birthDate = birthDate;
     }
@@ -35,15 +33,22 @@ var Person = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
-    Person.prototype.isNameValid = function (name) {
-        if (name.length <= 3)
-            throw new Error('O nome deve possuir mais do que 3 caracteres');
+    Person.getAge = function (value) {
+        var diff = Math.abs(new Date().getTime() - value.getTime()); // diferença em milissegundos entre a data atual e a data passada por parâmetro
+        var yearMs = 31536000000; // 1 ano = 31536000000 milissegundos
+        return Math.floor(diff / yearMs);
     };
-    Person.prototype.isBirthDateValid = function (birthDate) {
-        if (moment(birthDate).isBefore('1900/01/01'))
-            throw new Error('Você possui mais de 120 anos?:0');
+    Person.prototype.isNameValid = function (value) {
+        if (value.length < 3)
+            throw new Error('O nome deve conter no mínimo 3 caracteres.');
+    };
+    Person.prototype.isBirthDateValid = function (value) {
+        if (value.getTime() > new Date().getTime())
+            throw new Error('A data de nascimento não pode ser uma data no futuro.');
+        if (Person.getAge(value) > 120)
+            throw new Error('A pessoa deve ter no máximo 120 anos.');
     };
     return Person;
 }());
-var newPerson = new Person('Leonardo', new Date('08/03/1994'));
+var newPerson = new Person('Leonardo', new Date('08/03/1294'));
 console.log(newPerson);
