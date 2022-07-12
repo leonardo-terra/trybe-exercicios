@@ -1,3 +1,5 @@
+import * as moment from 'moment';
+
 class Person {
   protected name: string;
   protected birthDate: Date;
@@ -25,6 +27,11 @@ class Person {
   private isNameValid(name: string): void {
     if (name.length <= 3)
       throw new Error('O nome deve possuir mais do que 3 caracteres');
+  }
+
+  private isBirthDateValid(birthDate: Date): void {
+    if (moment(birthDate).isBefore('1900/01/01'))
+      throw new Error('Você possui mais de 120 anos?:0');
   }
 }
 
