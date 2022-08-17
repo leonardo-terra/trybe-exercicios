@@ -16,4 +16,5 @@ abstract class MongoModel<T> implements IModel<T>{
   }
 }
 
+
 export default MongoModel;
